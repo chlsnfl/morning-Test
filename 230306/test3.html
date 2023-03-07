@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let a = parseInt(prompt("숫자를 입력하세요"));
+
+
+       if(a<13){
+           document.write("차이값은 "+Math.abs(13-a)+"입니다.");
+       }else{
+
+            document.write("절대차이는 "+Math.abs((a-13)*2)+"입니다.");
+       }
+
+       /* 
+
+       function dn(a){
+        if(a<=13){
+            return 13-a;
+        }else{
+            return(a-13)*2;
+        }
+       }
+       */
+
+    </script>
+
+  
+</body>
+</html>
