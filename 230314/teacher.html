@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        body,html{
+            height: 100%; /*전체 꽉 채우게 하려면 여기에 설정해야함*/
+            margin: 0;
+        }
+        .tablink{
+            background: #555;
+            color: #fff;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px 17px;
+            font-size: 18px;
+            width: 25%;
+        }
+        .tablink:hover{
+            color: #666;
+        }
+        /*본문*/
+        .tabcontent{
+            color: #fff;
+            padding: 100px 20px;
+            height: 100%;
+        }
+        .tabcontent h1{
+            text-transform: uppercase;
+        }
+        #home{
+            background-color: red;
+        }
+        #news{
+            background-color: green;
+        }
+        #contact{
+            background-color: navy;
+        }
+        #about{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="tablink" id = "default" onclick = "openPage('home', this, 'red')">HOME</button>
+    <button class="tablink" onclick = "openPage('news', this, 'green')">NEWS</button>
+    <button class="tablink" onclick = "openPage('contact', this, 'navy')">CONTACT</button>
+    <button class="tablink" onclick = "openPage('about', this, 'pink')">ABOUT</button>
+    <div class="tabcontent" id="home">
+        <h1>home</h1>
+        <p>여기는 home 페이지 입니다.</p>
+    </div>
+    <div class="tabcontent" id="news">
+        <h1>news</h1>
+        <p>여기는 news 페이지 입니다.</p>
+    </div>
+    <div class="tabcontent" id="contact">
+        <h1>contact</h1>
+        <p>여기는 contact 페이지 입니다.</p>
+    </div>
+    <div class="tabcontent" id="about">
+        <h1>about</h1>
+        <p>여기는 about 페이지 입니다.</p>
+    </div>
+    <script>
+        function openPage(pageName, e, color){
+            const tabcontent = document.getElementsByClassName('tabcontent');
+            const tablink = document.getElementsByClassName('tablink');
+            let i;
+            for(i = 0; i<tabcontent.length;i++){
+                tabcontent[i].style.display="none";
+            }
+            for(i=0; i<tablink.length;i++){
+                tablink[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display="block";
+            e.style.backgroundColor = color;
+        }
+        document.getElementById('default').click();
+    </script>
+</body>
+</html>
